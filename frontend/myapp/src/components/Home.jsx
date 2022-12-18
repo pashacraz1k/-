@@ -5,6 +5,7 @@ import { filterProducts } from "../features/productsSlice";
 import { useGetAllProductsQuery } from "../features/productsApi";
 import Search from "./Search";
 import { useEffect, useState } from "react";
+import { Categories } from "./Categories";
 
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
@@ -36,7 +37,11 @@ const Home = () => {
       ) : (
         <>
           <h2>Мобильные Телефоны</h2>
-
+          <Categories
+            products={data}
+            dispatch={dispatch}
+            setFilter={setIsFilter}
+          ></Categories>
           <div className="main">
             <h1>React Search</h1>
             <div className="search">

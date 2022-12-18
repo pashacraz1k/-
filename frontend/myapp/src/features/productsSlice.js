@@ -24,6 +24,9 @@ const productsSlice = createSlice({
         return finalRes.indexOf(filterSearch) !== -1;
       });
     },
+    setCategories(state, action) {
+      state.filterItems = action.payload;
+    },
   },
   extraReducers: {
     [productsFetch.pending]: (state, action) => {
@@ -42,6 +45,6 @@ const productsSlice = createSlice({
   },
 });
 
-export const { filterProducts } = productsSlice.actions;
+export const { filterProducts, setCategories } = productsSlice.actions;
 
 export default productsSlice.reducer;
