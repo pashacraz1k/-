@@ -281,6 +281,7 @@ font-weight: 400;
 
 
 .categories div{
+  float: right;
   display: inline-block;
   background: #f2f2f2;
   border-radius: 50px;
